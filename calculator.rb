@@ -1,6 +1,14 @@
-def first_number (0,1,2,3,4,5,6,7,8,9,10)
+def first_number (0,1,2,3,4,5,6,7,8,9,)
 
-def second_number (1,2,3,4,5,6,7,8,9,10)
+def second_number (1,2,3,4,5,6,7,8,9,)
+  
+  def sum ("first_number" + "second_number")
+    
+    def difference ("first_number" - "second_number")
+      
+      def product ("first_number" * "second_number")
+        
+        def quotient ("first_number" / "second_number")
 
 
 it "contains a local 'variable' called first_number that is assigned to a number" do
@@ -15,3 +23,10 @@ it "contains a local 'variable' called second_number that is assinged to a numbe
   expect (second_number). not_to equal (0)
 end
 
+it "contains a local variable called sum that is assigned to the result of adding first_number and second_number" do
+  first_number = get_variable_from_file ('./calculator.rb', "first_number")
+  second_number = get_variable_from_file ('./calculator.rb', "second_number")
+  sum = get_variable_from_file ('./calculator.rb', "sum")
+  
+  expect (sum). to equal (first_number + second_number)
+end
